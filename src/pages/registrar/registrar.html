@@ -1,18 +1,36 @@
-<!--
-  Generated template for the RegistrarPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>registrar</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      Registrar
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary">Nome</ion-label>
+      <ion-input placeholder="Joãozinho" maxlength="20"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Celular</ion-label>
+      <ion-input placeholder="(16) 99999.9999" maxlength="20"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Email</ion-label>
+      <ion-input placeholder="nome@dominio.com" maxlength="20" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Senha</ion-label>
+      <ion-input placeholder="Sua senha aqui" maxlength="20" type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block>Registrar</button>
 
 </ion-content>
