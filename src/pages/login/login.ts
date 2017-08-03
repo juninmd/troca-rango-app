@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegistrarPage } from "../registrar/registrar";
+import { EsquecisenhaPage } from "../esquecisenha/esquecisenha";
 
 @IonicPage()
 @Component({
@@ -20,4 +21,8 @@ export class LoginPage {
     this.navCtrl.push(RegistrarPage);
   }
 
+  goToEsqueci() {
+    this.navCtrl.push(EsquecisenhaPage);
+  }
+ 
 }
