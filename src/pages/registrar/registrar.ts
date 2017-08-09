@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegistrarPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { UsuarioProvider } from "../../providers/usuario.provider";
 
 @IonicPage()
 @Component({
@@ -15,11 +9,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistrarPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public usuarioProvider: UsuarioProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrarPage');
+  }
+
+  registrar(usuario: any) {
+    this.usuarioProvider.cadastro(usuario).subscribe(q => {
+      console.log(q);
+    })
   }
 
 }
