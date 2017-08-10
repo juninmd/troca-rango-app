@@ -1,20 +1,32 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { RegistrarPage } from "../registrar/registrar";
-import { EsquecisenhaPage } from "../esquecisenha/esquecisenha";
+import { EsqueciSenhaPage } from "../esquecisenha/esquecisenha";
+import { UsuarioProvider } from "../../providers/usuario.provider";
+import { HomePage } from "../home/home";
 
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  usuario: any = {};
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private usuarioProvider: UsuarioProvider,
+    private menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    this.menuCtrl.enable(false);
+  }
+
+  logar() {
+    this.usuarioProvider.login(this.usuario).subscribe(q => {
+      this.menuCtrl.enable(true);
+      this.navCtrl.setRoot(HomePage);
+    })
   }
 
   goToRegister() {
@@ -22,7 +34,7 @@ export class LoginPage {
   }
 
   goToEsqueci() {
-    this.navCtrl.push(EsquecisenhaPage);
+    this.navCtrl.push(EsqueciSenhaPage);
   }
- 
+
 }

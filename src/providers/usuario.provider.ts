@@ -7,7 +7,7 @@ export class UsuarioProvider {
   constructor(private http: HttpBaseCoreProvider) { }
 
   public login(usuario: any) {
-    return this.http.get(`usuario?email=${usuario.email}&senha=${usuario.senha}`)
+    return this.http.get(`usuario?email=${usuario.EMAIL}&senha=${usuario.SENHA}`)
   }
 
   public cadastro(usuario: any) {

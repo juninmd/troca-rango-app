@@ -7,30 +7,31 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <form (ngSubmit)="registrar()" method="POST" #registrarForm="ngForm">
+    <ion-list>
 
-    <ion-item>
-      <ion-label color="primary">Nome</ion-label>
-      <ion-input placeholder="Joãozinho" maxlength="20"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary">Nome</ion-label>
+        <ion-input [(ngModel)]="usuario.NOME" name="usuario.NOME" placeholder="Joãozinho" maxlength="20"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary">Celular</ion-label>
-      <ion-input placeholder="(16) 99999.9999" maxlength="20"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary">Celular</ion-label>
+        <ion-input [(ngModel)]="usuario.CELULAR" name="usuario.CELULAR" placeholder="(16) 99999.9999" maxlength="20"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary">Email</ion-label>
-      <ion-input placeholder="nome@dominio.com" maxlength="20" type="email"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary">Email</ion-label>
+        <ion-input [(ngModel)]="usuario.EMAIL" name="usuario.EMAIL" placeholder="nome@dominio.com" maxlength="20" type="email"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary">Senha</ion-label>
-      <ion-input placeholder="Sua senha aqui" maxlength="20" type="password"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary">Senha</ion-label>
+        <ion-input [(ngModel)]="usuario.SENHA" name="usuario.SENHA" placeholder="Sua senha aqui" maxlength="20" type="password"></ion-input>
+      </ion-item>
 
-  </ion-list>
+    </ion-list>
 
-  <button ion-button block>Registrar</button>
-
+    <button ion-button block>Registrar</button>
+  </form>
 </ion-content>

@@ -7,21 +7,22 @@
     </div>
   </div>
   <div padding>
-    <ion-list>
+    <form (ngSubmit)="logar()" method="POST" #registrarForm="ngForm">
+      <ion-list>
 
-      <ion-item>
-        <ion-label color="primary">Email</ion-label>
-        <ion-input placeholder="nome@dominio.com" maxlength="20" type="email"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label color="primary">Email</ion-label>
+          <ion-input placeholder="nome@dominio.com" maxlength="20" [(ngModel)]="usuario.EMAIL" name="usuario.EMAIL" type="email"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label color="primary">Senha</ion-label>
-        <ion-input placeholder="Sua senha aqui" maxlength="20" type="password"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label color="primary">Senha</ion-label>
+          <ion-input placeholder="Sua senha aqui" maxlength="20" [(ngModel)]="usuario.SENHA" name="usuario.SENHA" type="password"></ion-input>
+        </ion-item>
 
-    </ion-list>
-
-    <button ion-button block color="secondary">Login</button>
+      </ion-list>
+      <button ion-button block color="secondary">Login</button>
+    </form>
     <ion-grid>
       <ion-row>
         <ion-col col-6>

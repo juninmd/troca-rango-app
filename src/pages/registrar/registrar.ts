@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { UsuarioProvider } from "../../providers/usuario.provider";
 
-@IonicPage()
 @Component({
   selector: 'page-registrar',
   templateUrl: 'registrar.html',
 })
 export class RegistrarPage {
 
-  constructor(public navCtrl: NavController,
-    public navParams: NavParams,
-    public usuarioProvider: UsuarioProvider) {
+  usuario: any = {};
+  constructor(private navCtrl: NavController,
+    private navParams: NavParams,
+    private usuarioProvider: UsuarioProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrarPage');
   }
 
-  registrar(usuario: any) {
-    this.usuarioProvider.cadastro(usuario).subscribe(q => {
+  registrar() {
+    this.usuarioProvider.cadastro(this.usuario).subscribe(q => {
       console.log(q);
     })
   }
