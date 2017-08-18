@@ -24,6 +24,7 @@ import { RegistrarPage } from "../pages/registrar/registrar";
 import { LoginPage } from "../pages/login/login";
 import { EsqueciSenhaPage } from "../pages/esquecisenha/esquecisenha";
 import { MenuPage } from "../pages/menu/menu";
+import { SolicitartrocaPage } from "../pages/solicitartroca/solicitartroca";
 
 export function httpFactory(backend: XHRBackend, options: RequestOptions, loaderCoreProvider: LoaderCoreProvider, authCoreProvider: AuthCoreProvider) {
   return new HttpBaseCoreProvider(backend, options, loaderCoreProvider, authCoreProvider)
@@ -36,7 +37,8 @@ export function httpFactory(backend: XHRBackend, options: RequestOptions, loader
     RegistrarPage,
     LoginPage,
     EsqueciSenhaPage,
-    MenuPage
+    MenuPage,
+    SolicitartrocaPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ export function httpFactory(backend: XHRBackend, options: RequestOptions, loader
     RegistrarPage,
     LoginPage,
     EsqueciSenhaPage,
-    MenuPage
+    MenuPage,
+    SolicitartrocaPage
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "pt-BR" },

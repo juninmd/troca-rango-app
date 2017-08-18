@@ -1,24 +1,28 @@
 <ion-header>
   <ion-navbar color="primary">
+    <button color="light" ion-button icon-only menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
     <ion-title>
-      Alimento do dia
+      Temos hoje no almoço
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  Temos hoje no almoço
+  <button (click)="solicitarTrocaModal()" ion-button full color="secondary">Solicitar troca</button>
 
-  <ion-list padding-top color="white">
-    <ion-row>
-      <ion-label>
-        Principal
-      </ion-label>
-      <ion-avatar>
-        <img src="assets/img/foodbg.jpg"/>
-      </ion-avatar>
-    </ion-row>
-  </ion-list>
+  <ion-card>
+    <img src="assets/img/foodbg.jpg" />
+    <ion-card-content>
+      <ion-card-title>
+        Nine Inch Nails Live
+      </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+      </p>
+    </ion-card-content>
+  </ion-card>
 
-  <button ion-button full color="secondary">Solicitar troca</button>
+  <button ion-button full color="primary">Avaliar</button>
 </ion-content>

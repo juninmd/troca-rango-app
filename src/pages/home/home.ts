@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { SolicitartrocaPage } from "../solicitartroca/solicitartroca";
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,9 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) { }
 
+  solicitarTrocaModal() {
+    this.navCtrl.push(SolicitartrocaPage)
   }
-
 }
